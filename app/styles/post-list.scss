@@ -1,0 +1,19 @@
+.page__post-list {
+  ul {
+    //   Two column grid 50%/50%
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      display: inline-block;
+      padding: 2rem 3rem;
+      border: 1px solid var(--color-border);
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,8 +1,16 @@
 // remix.run blogs index.tsx
 
-import { Link, LoaderFunction, useLoaderData } from "remix";
+import { Link, LinksFunction, LoaderFunction, useLoaderData } from "remix";
+import postListStylesUrl from "~/styles/post-list.css";
 import { PostModel } from "../../models/post.models";
 import { postsDataService } from "../../services/posts-data.service";
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: postListStylesUrl,
+  },
+];
 
 type LoaderData = Omit<PostModel, "content">[];
 export const loader: LoaderFunction = async () => {
@@ -13,7 +21,7 @@ export default function Blogs() {
   const posts = useLoaderData<LoaderData>();
 
   return (
-    <div>
+    <div className="page__post-list">
       <h1>Posts</h1>
       <ul>
         {posts.map((post) => (
