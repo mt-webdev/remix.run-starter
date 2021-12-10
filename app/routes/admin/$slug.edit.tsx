@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ActionFunction, LoaderFunction, redirect, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
 import { postsDataService } from "../../services/posts-data.service";
@@ -5,8 +6,8 @@ import PostForm from "../../shared/posts/post-form";
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, "slug is required");
-
-  return postsDataService.getMarkdown(params.slug);
+  const post = await postsDataService.getMarkdown(params.slug);
+  return post;
 };
 
 export const action: ActionFunction = async ({ request }) => {
@@ -25,7 +26,12 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function EditPost() {
-  const post = useLoaderData();
+  let post = useLoaderData();
+  useEffect(() => {
+    return () => {
+      post = null;
+    };
+  }, [post.slug]);
   return (
     <div>
       <h1>Edit Post</h1>

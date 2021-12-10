@@ -1,3 +1,15 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .page__admin {
   main {
     display: flex;
@@ -16,6 +28,11 @@
         background-color: #1565c0;
         cursor: pointer;
       }
+    }
+
+    .pulse {
+      display: inline-block;
+      animation: pulse 1s infinite;
     }
   }
 

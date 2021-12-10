@@ -1,10 +1,12 @@
-import { Form, useActionData } from "remix";
+import { Form, useActionData, useTransition } from "remix";
 import { PostModel } from "../../models/post.models";
 
 type AdminFormProps = Partial<PostModel>;
 
 export default function PostForm(props: AdminFormProps) {
+  const transition = useTransition();
   const { title, content, slug } = props;
+  const isNew = !slug;
   const errors = useActionData<Record<string, string>>();
 
   return (
@@ -38,7 +40,17 @@ export default function PostForm(props: AdminFormProps) {
         ></textarea>
       </p>
       <p>
-        <button type="submit">Create Post</button>
+        <button type="submit">
+          {transition.submission ? (
+            <>
+              Processing <span className="pulse">💾</span>
+            </>
+          ) : isNew ? (
+            "Create Psot"
+          ) : (
+            "Edit Post"
+          )}
+        </button>
       </p>
     </Form>
   );

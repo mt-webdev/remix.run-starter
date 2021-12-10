@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { LinksFunction } from "remix";
 import {
   Link,
@@ -119,6 +120,14 @@ function Document({
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
+  // useState isAdmin
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(Object.keys(window).includes("admin"));
+    (window as any).admin = () => setIsAdmin(true);
+  }, [setIsAdmin]);
+
   return (
     <div className="remix-app">
       <header className="remix-app__header">
@@ -134,15 +143,11 @@ function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 <Link to="/posts">Blog</Link>
               </li>
-              <li>
-                <Link to="/admin">Admin</Link>
-              </li>
-              <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/remix-run/remix">GitHub</a>
-              </li>
+              {isAdmin ? (
+                <li>
+                  <Link to="/admin">Admin</Link>
+                </li>
+              ) : null}
             </ul>
           </nav>
         </div>
