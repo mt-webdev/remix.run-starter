@@ -1,0 +1,43 @@
+.page__admin {
+  main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    button[type="submit"] {
+      background-color: #2196f3;
+      border: none;
+      color: var(--color-foreground);
+      font-size: 1rem;
+      padding: 1rem;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease-in-out;
+      &:hover {
+        background-color: #1565c0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  aside ul {
+    list-style: none;
+    padding: 2rem 1rem;
+    border-right: 1px solid var(--color-border);
+    li:not(.separator)::before {
+      content: "🔗";
+      margin-right: 0.5rem;
+    }
+
+    li.separator {
+      border-bottom: 1px solid var(--color-border);
+      margin: 1rem 0 0.5rem 0;
+      font-weight: bold;
+    }
+  }
+
+  section em {
+    font-weight: bold;
+    font-style: italic;
+    color: #f44336;
+  }
+}
