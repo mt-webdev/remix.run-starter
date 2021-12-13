@@ -1,7 +1,7 @@
 // remix.run blogs index.tsx
 
-import postListStylesUrl from '@styles/post-list.css'
 import {Link, LinksFunction, LoaderFunction, useLoaderData} from 'remix'
+import postListStylesUrl from '~/styles/post-list.css'
 import {PostModel} from '../../models/post.models'
 import {postsDataService} from '../../services/posts-data.service'
 

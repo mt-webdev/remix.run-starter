@@ -1,6 +1,6 @@
-import stylesUrl from '@styles/about.css'
 import type {LinksFunction, MetaFunction} from 'remix'
 import {Outlet} from 'remix'
+import stylesUrl from '~/styles/about.css'
 
 export let meta: MetaFunction = () => {
   return {

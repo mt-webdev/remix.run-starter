@@ -1,5 +1,5 @@
-import adminStylesUrl from '@styles/admin.css'
 import {Link, LinksFunction, LoaderFunction, Outlet, useLoaderData} from 'remix'
+import adminStylesUrl from '~/styles/admin.css'
 import {usePageTitle} from '../hooks/page-title.hooks'
 import {PostModel} from '../models/post.models'
 import {postsDataService} from '../services/posts-data.service'

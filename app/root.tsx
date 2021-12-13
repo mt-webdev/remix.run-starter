@@ -1,4 +1,3 @@
-import globalStylesUrl from '@styles/global.css'
 import {useEffect, useState} from 'react'
 import type {LinksFunction} from 'remix'
 import {
@@ -11,6 +10,7 @@ import {
   ScrollRestoration,
   useCatch,
 } from 'remix'
+import globalStylesUrl from '~/styles/global.css'
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
