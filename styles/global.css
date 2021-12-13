@@ -36,7 +36,7 @@ html {
 
 html,
 body {
-  @apply h-0 p-0 bg-gray-50 text-slate-900 dark:bg-slate-900 dark:text-gray-100;
+  @apply h-0 p-0 bg-gray-50 text-slate-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
 body {
