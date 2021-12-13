@@ -1,7 +1,7 @@
 .page__admin main {
   @apply flex flex-row gap-8;
 }
-.page__admin main button[type="submit"] {
+.page__admin main button[type='submit'] {
   @apply bg-sky-500 hover:bg-sky-600 focus:outline-none border-none text-slate-50 text-base p-4 uppercase transition-colors duration-200 ease-in-out;
 }
 
