@@ -1,0 +1,26 @@
+{
+  "name": "MyRemix",
+  "short_name": "MyRemix",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Eine einfach lesbare remix.run App.",
+  "icons": [
+    {
+      "src": "images/remix-r-outline-light-64.png",
+      "sizes": "56x64",
+      "type": "image/png"
+    },
+    {
+      "src": "images/remix-outline-light-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/remix-outline-light-o.png",
+      "sizes": "745x186",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

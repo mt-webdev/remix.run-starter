@@ -8,7 +8,7 @@ import {
 import { usePageTitle } from "../hooks/page-title.hooks";
 import { PostModel } from "../models/post.models";
 import { postsDataService } from "../services/posts-data.service";
-import adminStylesUrl from "../styles/admin.css";
+import adminStylesUrl from "../styles/out/admin.css";
 
 export const links: LinksFunction = () => [
   {

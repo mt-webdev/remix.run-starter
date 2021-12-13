@@ -10,7 +10,6 @@
  * Read more about styling routes in the docs:
  * https://remix.run/guides/styling
  */
-
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(56, 100%, 50%);
@@ -21,6 +20,17 @@
     Liberation Mono, Courier New, monospace;
 }
 
-.about__intro {
-  max-width: 500px;
+html,
+body {
+  @apply bg-yellow-300 text-black;
+
+  a {
+    @apply text-green-700  hover:text-green-500;
+  }
 }
+
+.about__intro {
+  @apply max-w-lg;
+}
+
+/*# sourceMappingURL=about.css.map */

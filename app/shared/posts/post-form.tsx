@@ -43,10 +43,10 @@ export default function PostForm(props: AdminFormProps) {
         <button type="submit">
           {transition.submission ? (
             <>
-              Processing <span className="pulse">💾</span>
+              Processing <span className="animate-pulse">💾</span>
             </>
           ) : isNew ? (
-            "Create Psot"
+            "Create Post"
           ) : (
             "Edit Post"
           )}

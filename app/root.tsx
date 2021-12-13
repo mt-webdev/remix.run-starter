@@ -10,18 +10,13 @@ import {
   ScrollRestoration,
   useCatch,
 } from "remix";
-import darkStylesUrl from "~/styles/dark.css";
-import globalStylesUrl from "~/styles/global.css";
+import globalStylesUrl from "~/styles/out/global.css";
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
   return [
+    { rel: "manifest", href: "/manifest.webmanifest" },
     { rel: "stylesheet", href: globalStylesUrl },
-    {
-      rel: "stylesheet",
-      href: darkStylesUrl,
-      media: "(prefers-color-scheme: dark)",
-    },
   ];
 };
 

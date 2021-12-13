@@ -1,0 +1,6 @@
+.page__post-list ul {
+  @apply grid p-0 m-0 grid-cols-2 list-none gap-5;
+}
+.page__post-list ul li a {
+  @apply font-bold px-3 py-5 inline-block w-full h-full rounded-lg border border-solid border-gray-500 shadow-md dark:border-zinc-700;
+}
