@@ -1,13 +1,13 @@
-import { Form, useActionData, useTransition } from "remix";
-import { PostModel } from "../../models/post.models";
+import {Form, useActionData, useTransition} from 'remix'
+import {PostModel} from '../../models/post.models'
 
-type AdminFormProps = Partial<PostModel>;
+type AdminFormProps = Partial<PostModel>
 
 export default function PostForm(props: AdminFormProps) {
-  const transition = useTransition();
-  const { title, content, slug } = props;
-  const isNew = !slug;
-  const errors = useActionData<Record<string, string>>();
+  const transition = useTransition()
+  const {title, content, slug} = props
+  const isNew = !slug
+  const errors = useActionData<Record<string, string>>()
 
   return (
     <Form method="post">
@@ -21,7 +21,9 @@ export default function PostForm(props: AdminFormProps) {
       <p>
         <label htmlFor="title">
           Slug:
-          {errors?.slug && <em> {errors.slug}</em>}
+          {errors?.slug && (
+            <em className="font-bold italic text-red-500"> {errors.slug}</em>
+          )}
         </label>
         <input type="text" name="slug" id="slug" defaultValue={slug} />
       </p>
@@ -40,18 +42,21 @@ export default function PostForm(props: AdminFormProps) {
         ></textarea>
       </p>
       <p>
-        <button type="submit">
+        <button
+          type="submit"
+          className="bg-cyan-500 hover:bg-cyan-600 focus:outline-none border-none text-slate-50 text-base p-4 uppercase transition-colors duration-200 ease-in-out"
+        >
           {transition.submission ? (
             <>
               Processing <span className="animate-pulse">💾</span>
             </>
           ) : isNew ? (
-            "Create Post"
+            'Create Post'
           ) : (
-            "Edit Post"
+            'Edit Post'
           )}
         </button>
       </p>
     </Form>
-  );
+  )
 }

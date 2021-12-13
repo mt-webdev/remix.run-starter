@@ -21,17 +21,21 @@ export default function Admin() {
 
   return (
     <div className="page__admin">
-      <main>
+      <main className="flex flex-row gap-8">
         <aside>
           <h2>Menu</h2>
-          <ul>
-            <li className="separator">Admin</li>
-            <li>
+          <ul className="list-none py-8 px-4 border border-gray-500 dark:border-zinc-700 rounded-sm">
+            <li className="border-b border-gray-500 dark:border-zinc-700 mt-4 mr-0 mb-2 ml-0 font-bold">
+              Admin
+            </li>
+            <li className="before:content-['🔗'] before:mr-1">
               <Link to="/admin/new-post">Create new Post</Link>
             </li>
-            <li className="separator">Posts</li>
+            <li className="border-b border-gray-500 dark:border-zinc-700 mt-4 mr-0 mb-2 ml-0 font-bold">
+              Posts
+            </li>
             {posts.map(post => (
-              <li key={post.slug}>
+              <li key={post.slug} className="before:content-['🔗'] before:mr-1">
                 <Link to={`/admin/${post.slug}/edit`}>{post.title}</Link>
               </li>
             ))}

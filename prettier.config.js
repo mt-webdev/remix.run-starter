@@ -15,5 +15,14 @@ module.exports = {
   semi: false,
   singleQuote: true,
   tabWidth: 2,
+  useTab: false,
   trailingComma: 'all',
+  overrides: [
+    {
+      files: '*.css',
+      options: {
+        printWidth: 80,
+      },
+    },
+  ],
 }

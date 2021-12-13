@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./app/**/*.{html,tsx}"],
+  content: ['./app/**/*.{html,tsx}'],
   theme: {
     //  colors: {
     //   'blue': '#1fb6ff',
@@ -15,4 +15,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}
