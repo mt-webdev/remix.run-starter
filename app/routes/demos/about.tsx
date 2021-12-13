@@ -1,16 +1,16 @@
-import type { LinksFunction, MetaFunction } from "remix";
-import { Outlet } from "remix";
-import stylesUrl from "~/styles/out/about.css";
+import stylesUrl from '@styles/about.css'
+import type {LinksFunction, MetaFunction} from 'remix'
+import {Outlet} from 'remix'
 
 export let meta: MetaFunction = () => {
   return {
-    title: "About Remix",
-  };
-};
+    title: 'About Remix',
+  }
+}
 
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: stylesUrl }];
-};
+  return [{rel: 'stylesheet', href: stylesUrl}]
+}
 
 export default function Index() {
   return (
@@ -23,13 +23,13 @@ export default function Index() {
         </p>
         <p>
           Did you notice that things look a little different on this page? The
-          CSS that we import in the route file and include in its{" "}
+          CSS that we import in the route file and include in its{' '}
           <code>links</code> export is only included on this route and its
           children.
         </p>
         <p>
           Wait a sec...<em>its children</em>? To understand what we mean by
-          this,{" "}
+          this,{' '}
           <a href="https://remix.run/tutorial/4-nested-routes-params">
             read all about nested routes in the docs
           </a>
@@ -39,5 +39,5 @@ export default function Index() {
         <Outlet />
       </div>
     </div>
-  );
+  )
 }

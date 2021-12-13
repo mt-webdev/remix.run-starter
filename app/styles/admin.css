@@ -1,22 +1,71 @@
 .page__admin main {
-  @apply flex flex-row gap-8;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem
 }
 .page__admin main button[type="submit"] {
-  @apply bg-sky-500 hover:bg-sky-600 focus:outline-none border-none text-slate-50 text-base p-4 uppercase transition-colors duration-200 ease-in-out;
+    border-style: none;
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    --tw-text-opacity: 1;
+    color: rgb(248 250 252 / var(--tw-text-opacity));
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
-
+.page__admin main button[type="submit"]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(2 132 199 / var(--tw-bg-opacity))
+}
+.page__admin main button[type="submit"]:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
 .page__admin aside ul {
-  @apply list-none py-8 px-4 border border-gray-500 dark:border-zinc-700 rounded-sm;
+    list-style-type: none;
+    border-radius: 0.125rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(107 114 128 / var(--tw-border-opacity));
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem
 }
-
-.page__admin aside ul li:not(.separator) {
-  @apply before:content-['🔗'] before:mr-1;
+@media (prefers-color-scheme: dark) {
+    .page__admin aside ul {
+        --tw-border-opacity: 1;
+        border-color: rgb(63 63 70 / var(--tw-border-opacity))
+    }
+}
+.page__admin aside ul li:not(.separator)::before {
+    margin-right: 0.25rem;
+    --tw-content: '🔗';
+    content: var(--tw-content)
 }
 .page__admin aside ul li.separator {
-  @apply border-b border-gray-500 dark:border-zinc-700 mt-4 mr-0 mb-2 ml-0 font-bold;
+    margin-top: 1rem;
+    margin-right: 0px;
+    margin-bottom: 0.5rem;
+    margin-left: 0px;
+    border-bottom-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(107 114 128 / var(--tw-border-opacity));
+    font-weight: 700
+}
+@media (prefers-color-scheme: dark) {
+    .page__admin aside ul li.separator {
+        --tw-border-opacity: 1;
+        border-color: rgb(63 63 70 / var(--tw-border-opacity))
+    }
 }
 .page__admin section em {
-  @apply font-bold italic text-red-500;
+    font-weight: 700;
+    font-style: italic;
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity))
 }
-
-/*# sourceMappingURL=admin.css.map */

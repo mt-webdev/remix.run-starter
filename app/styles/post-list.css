@@ -1,6 +1,32 @@
 .page__post-list ul {
-  @apply grid p-0 m-0 grid-cols-2 list-none gap-5;
+    margin: 0px;
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding: 0px
 }
 .page__post-list ul li a {
-  @apply font-bold px-3 py-5 inline-block w-full h-full rounded-lg border border-solid border-gray-500 shadow-md dark:border-zinc-700;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(107 114 128 / var(--tw-border-opacity));
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-weight: 700;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+@media (prefers-color-scheme: dark) {
+    .page__post-list ul li a {
+        --tw-border-opacity: 1;
+        border-color: rgb(63 63 70 / var(--tw-border-opacity))
+    }
 }

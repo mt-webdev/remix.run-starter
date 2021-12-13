@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+
+/*
+ * You can just delete everything here or keep whatever you like, it's just a
+ * quick baseline!
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:focus {
+  @apply outline-blue-400 outline-2 outline-offset-2;
+}
+
+html,
+body {
+  @apply h-0 p-0 bg-gray-50 text-slate-900 dark:bg-slate-900 dark:text-gray-100;
+}
+
+body {
+  @apply leading-6;
+}
+
+p {
+  @apply my-6;
+}
+
+a {
+  @apply text-sky-500 dark:text-sky-300 no-underline;
+}
+
+a:hover {
+  @apply text-sky-700  dark:text-sky-500 underline;
+}
+
+input:where([type='text']),
+input:where([type='search']),
+textarea {
+  @apply block border border-gray-500 shadow-md dark:border-zinc-700 w-full leading-4 px-2 text-inherit bg-slate-50 text-zinc-900 dark:bg-slate-800 dark:text-gray-100;
+}
+
+input:where([type='text']),
+input:where([type='search']) {
+  @apply h-8;
+}
+
+.sr-only {
+  @apply absolute 
+  w-[1px] 
+  h-[1px] 
+  p-0 
+  m-[-1px] 
+  overflow-hidden 
+  whitespace-nowrap 
+  border-0;
+}
+
+.container {
+  @apply w-[1024px] mx-auto;
+}
+
+.remix-app {
+  @apply flex flex-col min-h-[100vh];
+}
+
+.remix-app > * {
+  @apply w-full;
+}
+
+.remix-app__header {
+  @apply py-4 
+  border-b-2 
+  border-gray-500 
+  dark:border-zinc-700;
+}
+
+.remix-app__header-content {
+  @apply flex justify-between items-center;
+}
+
+.remix-app__header-home-link {
+  @apply w-28 h-8;
+}
+
+.remix-app__header-nav ul {
+  @apply list-none m-0 flex items-center gap-6;
+}
+
+.remix-app__header-nav li {
+  @apply font-bold;
+}
+
+.remix-app__main {
+  @apply flex-1;
+}
+
+.remix-app__footer {
+  @apply py-4 border border-gray-500 dark:border-zinc-700;
+}
+
+.remix-app__footer-content {
+  @apply flex justify-center items-center;
+}
+
+.remix__page {
+  @apply grid gap-4 py-8 auto-rows-min;
+}
+
+@media print, screen and (min-width: 640px) {
+  .remix__page {
+    @apply auto-rows-auto grid-cols-2;
+  }
+}
+
+.remix__page > main {
+  @apply mt-0;
+}
+
+.remix__page > main {
+  @apply mb-0;
+}
+
+.remix__page > aside {
+  @apply m-0 py-6 px-8 border border-gray-500 dark:border-zinc-700 rounded-lg;
+}
+
+.remix__page > aside {
+  @apply mt-0;
+}
+
+.remix__page > aside {
+  @apply mb-0;
+}
+
+.remix__form {
+  @apply flex flex-col gap-4 p-4 border border-gray-500 dark:border-zinc-700 rounded-lg;
+}
+
+.remix__form > * {
+  @apply my-0;
+}

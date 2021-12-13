@@ -6,4 +6,4 @@
 
 *.map
 
-app/styles/out/*
+app/styles/*

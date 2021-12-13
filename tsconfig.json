@@ -4,12 +4,15 @@
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "esModuleInterop": true,
     "jsx": "react-jsx",
+    "module": "es2020",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "target": "ES2019",
+    "target": "es2020",
     "strict": true,
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["app/*"],
+      "@styles/*": ["app/styles/*"]
     },
 
     // Remix takes care of building everything in `remix build`.
