@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* abc {
+  color: #e5b240;
+} */
+
 @layer base {
   :root {
     --color-primary: 0, 162, 226;

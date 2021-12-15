@@ -110,9 +110,8 @@ function Document({
       p-0 
       relative 
       h-screen  
-      bg-gradient-to-br 
-      from-skin-hue 
-      to-transparent 
+      bg-gradient-to-t 
+      from-gray-200
       text-base 
       text-skin-base"
       >
@@ -134,7 +133,7 @@ function Layout({children}: {children: React.ReactNode}) {
   }, [setIsAdmin])
 
   return (
-    <div className="w-full grid grid-rows-app-sm md:grid-rows-app-md h-full gap-4">
+    <div className="w-full grid grid-rows-app-sm md:grid-rows-app-md h-full gap-4 px-1 md:px-3 lg:px-8">
       <header
         className="sticky top-0 left-0 order-4 md:order-first 
           shadow-xl 
@@ -144,11 +143,12 @@ function Layout({children}: {children: React.ReactNode}) {
           md:rounded-b 
           bg-opacity-70  
           backdrop-blur-sm  
-          mx-1 
-          md:mx-8
+          mx-auto
+          w-full
+          xl:mx-auto
+          md:px-4
           md:max-w-full
           lg:max-w-7xl 
-          px-8
           bg-skin-highlight"
       >
         <div
