@@ -104,7 +104,18 @@ function Document({
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        className="
+      m-0 
+      p-0 
+      relative 
+      h-screen  
+      bg-gradient-to-br 
+      from-skin-hue 
+      to-transparent 
+      text-base 
+      text-skin-base"
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -115,7 +126,6 @@ function Document({
 }
 
 function Layout({children}: {children: React.ReactNode}) {
-  // useState isAdmin
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
@@ -124,19 +134,54 @@ function Layout({children}: {children: React.ReactNode}) {
   }, [setIsAdmin])
 
   return (
-    <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
-            <RemixLogo />
+    <div className="w-full grid grid-rows-app-sm md:grid-rows-app-md h-full gap-4">
+      <header
+        className="sticky top-0 left-0 order-4 md:order-first 
+          shadow-xl 
+          py-2 
+          rounded-t 
+          md:rounded-t-none 
+          md:rounded-b 
+          bg-opacity-70  
+          backdrop-blur-sm  
+          mx-1 
+          md:mx-8
+          md:max-w-full
+          lg:max-w-7xl 
+          px-8
+          bg-skin-highlight"
+      >
+        <div
+          className="
+            flex 
+            items-center
+            justify-around
+            md:justify-start 
+            gap-12 "
+        >
+          <Link
+            to="/"
+            title="Home"
+            className="hover:no-underline font-['Segoe UI'] text-4xl text-skin-button"
+          >
+            MTWD
           </Link>
-          <nav aria-label="Main navigation" className="remix-app__header-nav">
-            <ul>
+          <nav aria-label="Main navigation">
+            <ul className="flex gap-3 md:gap-6 text-lg font-semibold whitespace-nowrap">
               <li>
-                <Link to="/">Home</Link>
+                <Link className="text-skin-base" to="/">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/posts">Blog</Link>
+                <Link className="text-skin-base" to="/posts">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className="text-skin-base" to="/posts">
+                  Ré­su­mé
+                </Link>
               </li>
               {isAdmin ? (
                 <li>
@@ -147,13 +192,31 @@ function Layout({children}: {children: React.ReactNode}) {
           </nav>
         </div>
       </header>
-      <div className="remix-app__main">
+      <div className="max-w-5xl mx-2 md:mx-auto h-max">
         <div className="container remix-app__main-content">{children}</div>
       </div>
-      <footer className="remix-app__footer">
-        <div className="container remix-app__footer-content">
-          <p>&copy; You!</p>
-        </div>
+      <footer
+        className="
+          max-w-5xl 
+          mx-auto 
+          border-b
+          md:border-t
+          border-slate-300
+          w-full 
+          order-first
+          md:order-last
+          py-1
+          md:py-2"
+      >
+        <ul className="flex mx-auto justify-center gap-4">
+          <li>&copy; Marco Traspel</li>
+          <li>
+            <a href="https://twitter.com/MarcoTraspel">Twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/mt-webdev">GitHub</a>
+          </li>
+        </ul>
       </footer>
     </div>
   )
